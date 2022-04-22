@@ -29,10 +29,11 @@ def q2():
     e = 0.1
     zv = st.norm.ppf((1 - conf)/2 + conf)
     n = (zv * ssd / e) ** 2
+    n2 = error_min_size(conf, ssd, e)
 
     bi = "Yes. The sample mean is an unbiased estimator the population mean, with increasing accuracy as n increases."
     bii = "No, the scores themselves may not follow the normal distribution. There is no evidence for this."
-    disp(ci, aii, n, bi, bii)
+    disp(ci, aii, n, n2, bi, bii)
 
 def q3():
     n = 13
@@ -73,11 +74,19 @@ def q6():
     iii = "Take the joint pdf divided by the pdf of x, and sub in x = 0.8, then integrate from 0 <= y <= 0.5"
     iv = "Taking the funky conditional pdf from before, now integrate with a y multiple at the front"
 
+def test():
+    conf_level = 0.95
+    std = 1.5
+    err = 0.1
+    min_size = error_min_size(conf_level, std, err) #returns 
+    disp(min_size)
+
 # Generate solutions below
 
 # q1()
 # q2()
-q3()
+# q3()
 # q4()
 # q5()
 # q6()
+test()
