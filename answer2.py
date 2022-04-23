@@ -14,7 +14,8 @@ def q4():
     var = sta.variance(x)
     conf = 0.9
     ci = ci_unknown(sta.mean(x), conf, 5, var ** 0.5)
-    disp(var, ci)
+    n = error_min_size(0.9, (var*5)** 0.5, 5)
+    disp(var, ci, n)
 
 def q5():
     a = 0.01
@@ -36,6 +37,6 @@ def q6():
 # Generate solutions below
 
 # q3()
-# q4()
+q4()
 # q5()
-q6()
+# q6()
